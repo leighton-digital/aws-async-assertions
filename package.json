@@ -1,6 +1,6 @@
 {
-  "name": "aws-async-assertions",
-  "version": "1.0.0",
+  "name": "@leighton-digital/aws-async-assertions",
+  "version": "0.0.1",
   "description": "A suite of Integration and E2E testing tools for AWS Serverless Applications",
   "packageManager": "pnpm@10.29.2",
   "engines": {
