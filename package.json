@@ -36,7 +36,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepublishOnly": "pnpm run clean && pnpm run build && pnpm test"
+    "prepublishOnly": "pnpm run clean && pnpm run build && pnpm test",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "keywords": [
     "serverless",
