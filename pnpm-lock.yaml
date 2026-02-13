@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      typedoc-plugin-markdown:
-        specifier: ^4.10.0
-        version: 4.10.0(typedoc@0.28.16(typescript@5.9.3))
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: 3.986.0
@@ -45,6 +41,9 @@ importers:
       typedoc:
         specifier: ^0.28.16
         version: 0.28.16(typescript@5.9.3)
+      typedoc-plugin-markdown:
+        specifier: ^4.10.0
+        version: 4.10.0(typedoc@0.28.16(typescript@5.9.3))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
