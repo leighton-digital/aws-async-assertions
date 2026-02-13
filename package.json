@@ -23,6 +23,24 @@
     "provenance": true
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./dynamo-db": {
+      "types": "./dist/dynamo-db/index.d.ts",
+      "require": "./dist/dynamo-db/index.js",
+      "default": "./dist/dynamo-db/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "require": "./dist/utils/index.js",
+      "default": "./dist/utils/index.js"
+    }
+  },
   "scripts": {
     "build": "rm -f tsconfig.tsbuildinfo && rm -rf ./dist && tsc -p tsconfig.json",
     "lint": "biome check --linter-enabled=true --formatter-enabled=false .",
@@ -39,6 +57,7 @@
     "prepublishOnly": "pnpm run clean && pnpm run build && pnpm test",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
+  "type": "commonjs",
   "keywords": [
     "serverless",
     "aws",
