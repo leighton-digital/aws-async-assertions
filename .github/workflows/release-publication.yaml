@@ -60,7 +60,7 @@ jobs:
           echo "Publishing version: $VERSION"
 
           # Find the packed tarball
-          TARBALL=$(ls aws-async-assertions-*.tgz | head -1)
+          TARBALL=$(ls leighton-digital-aws-async-assertions-*.tgz | head -1)
           echo "Publishing tarball: $TARBALL"
 
           # Publish the tarball to NPM using OIDC authentication
