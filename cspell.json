@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en-GB",
+  "dictionaryDefinitions": [
+    {
+      "name": "aws-async-assertions",
+      "path": "./assets/cspell/dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": [
+    "aws-async-assertions",
+    "bash",
+    "en-gb",
+    "en-gb-common-misspellings",
+    "node",
+    "npm",
+    "typescript"
+  ],
+  "ignorePaths": [
+    ".gitignore",
+    ".vscode",
+    "*.snap",
+    "*.svg",
+    "assets",
+    "cdk.json",
+    "cdk.out",
+    "node_modules",
+    "pnpm-lock.yaml"
+  ]
+}

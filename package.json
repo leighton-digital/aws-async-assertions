@@ -1,0 +1,69 @@
+{
+  "name": "aws-async-assertions",
+  "version": "1.0.0",
+  "description": "A suite of Integration and E2E testing tools for AWS Serverless Applications",
+  "packageManager": "pnpm@10.29.2",
+  "engines": {
+    "node": ">=20",
+    "pnpm": "10.29.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leighton-digital/aws-async-assertions.git"
+  },
+  "homepage": "https://github.com/leighton-digital/aws-async-assertions#readme",
+  "bugs": {
+    "url": "https://github.com/leighton-digital/aws-async-assertions/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -f tsconfig.tsbuildinfo && rm -rf ./dist && tsc -p tsconfig.json",
+    "check": "pnpm exec biome check",
+    "check:write": "pnpm exec biome check --write",
+    "clean": "rm -rf dist",
+    "docs:ref": "rm -rf ./docs-site/docs && typedoc",
+    "docs:build": "pnpm --prefix docs-site build",
+    "docs:start": "pnpm --prefix docs-site start",
+    "spell:check": "pnpm exec cspell .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "pnpm run clean && pnpm run build && pnpm test"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "testing",
+    "integration-testing",
+    "e2e",
+    "lambda"
+  ],
+  "author": "Leighton Digital",
+  "license": "MIT",
+  "peerDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "3.986.0",
+    "@aws-sdk/lib-dynamodb": "3.986.0",
+    "@biomejs/biome": "2.3.14",
+    "@jest/globals": "^30.2.0",
+    "@swc/cli": "^0.8.0",
+    "@swc/core": "^1.15.11",
+    "@swc/jest": "^0.2.39",
+    "@types/node": "^25.2.2",
+    "cspell": "9.6.4",
+    "jest": "^30.2.0",
+    "typedoc": "^0.28.16",
+    "typedoc-plugin-markdown": "^4.10.0",
+    "typescript": "^5.9.3"
+  }
+}

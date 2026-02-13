@@ -1,0 +1,9 @@
+packages:
+  - .
+  - docs-site
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - core-js
+  - core-js-pure
+  - unrs-resolver
