@@ -6,7 +6,7 @@
 ![Maintained](https://img.shields.io/maintenance/yes/2026)
 ![Code style: Biome](https://img.shields.io/badge/code%20style-biome-60A5FA?logo=biome)
 
-A lightweight utility library for **E2E and integration testing** of AWS serverless applications. Trigger your async C locally and use these utilities to verify that records exist in AWS services like DynamoDB.
+A lightweight utility library for **E2E and integration testing** of AWS serverless applications. Trigger your async code locally and use these utilities to verify that records exist in AWS services like DynamoDB.
 
 📖 [View the full documentation](https://leighton-digital.github.io/aws-async-assertions/)
 
@@ -14,15 +14,15 @@ A lightweight utility library for **E2E and integration testing** of AWS serverl
 
 ## Why?
 
-Testing serverless applications is challenging because operations are often asynchronous. When you trigger a Lambda function or API endpoint, the resulting data might not appear in your data stores immediately. This library provides utilities with built-in retry logic to poll AWS services until your expected data appears—or until a timeout is reached.
+Testing serverless applications is challenging because operations are often asynchronous. When you trigger a Lambda function or API endpoint, the resulting data might not appear in your data stores immediately. This library provides utilities with built-in retry logic to poll AWS services until your expected data appears - or until a timeout is reached.
 
 ### Testing Tip: Audit Records
 
 Consider writing `AUDIT#` records to DynamoDB at key points in your async workflows. This provides:
 
-- **Traceability** — Track the flow of requests through your system
-- **Testability** — Query for audit records to verify specific steps completed
-- **Debugging** — Understand where failures occur in complex flows
+- **Traceability** - Track the flow of requests through your system
+- **Testability** - Query for audit records to verify specific steps completed
+- **Debugging** - Understand where failures occur in complex flows
 
 ```typescript
 // In your Lambda function
@@ -264,7 +264,7 @@ Contributions are welcome! Please:
 
 ## License
 
-MIT License — see the [LICENSE](https://github.com/leighton-digital/aws-async-assertions/blob/main/LICENSE) file for details.
+MIT License - see the [LICENSE](https://github.com/leighton-digital/aws-async-assertions/blob/main/LICENSE) file for details.
 
 ---
 
