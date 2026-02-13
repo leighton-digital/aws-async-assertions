@@ -38,7 +38,6 @@ jobs:
       - name: 📚 Build Documentation
         run: |
           pnpm run docs:ref
-          pnpm run docs:post
           pnpm run docs:build
 
       - name: 📦 Create Package Tarball

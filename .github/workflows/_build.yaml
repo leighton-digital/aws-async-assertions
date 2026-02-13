@@ -37,5 +37,4 @@ jobs:
       - name: 📖 Build documentation
         run: |
           pnpm docs:ref
-          pnpm docs:post
           pnpm docs:build
