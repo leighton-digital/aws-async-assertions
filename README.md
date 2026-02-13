@@ -1,4 +1,4 @@
-<img width="50px" height="50px" align="right" alt="Cloud Blocks logo" src="https://raw.githubusercontent.com/leighton-digital/aws-async-assertions/HEAD/images/aws-async-assertions.png?sanitize=true" title="Leighton AWS Async Assertions"/>
+<img width="50px" height="50px" align="right" alt="AWS Async Asserions logo" src="https://raw.githubusercontent.com/leighton-digital/aws-async-assertions/HEAD/images/aws-async-assertions.png?sanitize=true" title="Leighton AWS Async Assertions"/>
 
 # AWS Async Assertions
 
