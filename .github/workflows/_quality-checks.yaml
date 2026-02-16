@@ -1,4 +1,6 @@
 name: Quality Checks
+permissions:
+  contents: read
 
 on:
   workflow_call:
@@ -22,3 +24,9 @@ jobs:
       name: 🧪  Unit Test
       run: pnpm test
       timeout-minutes: 15
+
+  unusedDependencies:
+    uses: ./.github/workflows/_node_job.yaml
+    with:
+      name: 📦  Unused Dependencies Check
+      run: pnpm dlx knip --include dependencies
