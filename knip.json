@@ -1,0 +1,11 @@
+{
+  "workspaces": {
+    ".": {},
+    "docs-site": {}
+  },
+  "ignoreDependencies": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/npm",
+    "@semantic-release/release-notes-generator"
+  ]
+}
