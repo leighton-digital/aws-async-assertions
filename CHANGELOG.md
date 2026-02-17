@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/leighton-digital/aws-async-assertions/compare/v1.1.0...v1.2.0) (2026-02-17)
+
+
+### Features
+
+* **cognito:** Add OAuth 2.0 client credentials flow utilities ([65775f4](https://github.com/leighton-digital/aws-async-assertions/commit/65775f4b1ee3d10a2c1045fa5534d0b15a3bda53))
+
 # [1.1.0](https://github.com/leighton-digital/aws-async-assertions/compare/v1.0.0...v1.1.0) (2026-02-13)
 
 
