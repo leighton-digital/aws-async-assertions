@@ -16,6 +16,8 @@ jobs:
   node-job:
     name: ${{inputs.name}}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     timeout-minutes: ${{inputs.timeout-minutes}}
     env:
       GITHUB_TOKEN: ${{ github.token }}
