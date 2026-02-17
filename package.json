@@ -30,15 +30,10 @@
       "require": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./dynamo-db": {
-      "types": "./dist/dynamo-db/index.d.ts",
-      "require": "./dist/dynamo-db/index.js",
-      "default": "./dist/dynamo-db/index.js"
-    },
-    "./utils": {
-      "types": "./dist/utils/index.d.ts",
-      "require": "./dist/utils/index.js",
-      "default": "./dist/utils/index.js"
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "require": "./dist/*/index.js",
+      "default": "./dist/*/index.js"
     }
   },
   "scripts": {
