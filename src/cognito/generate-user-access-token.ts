@@ -15,11 +15,11 @@ interface UserAccessTokenParams {
  *
  * @param params - The authentication parameters
  * @returns The access token string
- * @throws Error if the authentication request fails or required env vars are missing
+ * @throws Error if the authentication request fails or required environment variables are missing
  *
  * @example
  * ```typescript
- * // Minimal — uses USER_POOL_CLIENT_ID and AWS_REGION env vars
+ * // Minimal — uses USER_POOL_CLIENT_ID and AWS_REGION environment variables
  * const token = await generateUserAccessToken({
  *   email: process.env.TEST_EMAIL,
  *   password: process.env.TEST_PASSWORD,
