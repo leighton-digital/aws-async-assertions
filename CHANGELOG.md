@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/leighton-digital/aws-async-assertions/compare/v1.2.0...v1.2.1) (2026-02-17)
+
+
+### Bug Fixes
+
+* **cognito:** Update Cognito utilities documentation and improve cla… ([#6](https://github.com/leighton-digital/aws-async-assertions/issues/6)) ([ac68c2c](https://github.com/leighton-digital/aws-async-assertions/commit/ac68c2ce7442b3e440fc77449ba8dde331ca3ac9))
+
 # [1.2.0](https://github.com/leighton-digital/aws-async-assertions/compare/v1.1.0...v1.2.0) (2026-02-17)
 
 
