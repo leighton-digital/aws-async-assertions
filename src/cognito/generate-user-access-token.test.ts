@@ -81,7 +81,7 @@ describe('generateUserAccessToken', () => {
     });
   });
 
-  it('should fall back to env vars when region and clientId are omitted', async () => {
+  it('should fall back to environment variables when region and clientId are omitted', async () => {
     process.env.AWS_REGION = 'ap-southeast-1';
     process.env.USER_POOL_CLIENT_ID = 'env-client-id';
 

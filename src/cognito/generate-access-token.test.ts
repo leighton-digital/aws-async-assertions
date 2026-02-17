@@ -98,7 +98,7 @@ describe('generateAccessToken', () => {
     expect(decoded).toBe('my-client:my-secret');
   });
 
-  it('should fall back to env vars when params are omitted', async () => {
+  it('should fall back to environment variables when params are omitted', async () => {
     process.env.OAUTH_COGNITO_DOMAIN = 'env-app';
     process.env.AWS_REGION = 'eu-west-1';
     process.env.OAUTH_CLIENT_ID = 'env-client-id';

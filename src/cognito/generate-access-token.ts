@@ -18,7 +18,7 @@ interface AccessTokenParams {
  *
  * @param params - The authentication parameters
  * @returns The access token string
- * @throws Error if the token request fails or required env vars are missing
+ * @throws Error if the token request fails or required environment variables are missing
  *
  * @example
  * ```typescript

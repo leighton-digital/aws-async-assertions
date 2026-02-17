@@ -64,16 +64,23 @@ yarn add aws-async-assertions
 ## Quick Start
 
 ```typescript
-import { getItem, query, httpCall, generateAccessToken } from 'aws-async-assertions';
+import { getItem, query, httpCall, generateAccessToken, generateUserAccessToken } from 'aws-async-assertions';
 
 describe('Order Creation E2E', () => {
   it('should create an order and persist to DynamoDB', async () => {
-    // 1. Get an auth token
-    const token = await generateAccessToken(
-      'https://auth.example.com',
-      process.env.CLIENT_ID,
-      process.env.CLIENT_SECRET
-    );
+    // 1. Get an auth token (M2M client credentials via Cognito hosted UI)
+    const token = await generateAccessToken({
+      cognitoDomain: 'my-app',
+      region: 'us-east-1',
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+    });
+
+    // Or authenticate as a user (via Cognito InitiateAuth)
+    // const token = await generateUserAccessToken({
+    //   email: process.env.TEST_EMAIL,
+    //   password: process.env.TEST_PASSWORD,
+    // });
 
     // 2. Trigger the async flow via API
     const order = await httpCall(
@@ -145,6 +152,46 @@ await putItem('users-table', {
 });
 ```
 
+### Cognito Utilities
+
+#### `generateAccessToken(params?)`
+
+Generates an OAuth 2.0 access token using the Cognito hosted UI client credentials flow. All parameters are optional and fall back to environment variables.
+
+```typescript
+// Minimal — uses OAUTH_COGNITO_DOMAIN, AWS_REGION, OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET environment variables
+const token = await generateAccessToken();
+
+// Explicit overrides
+const token = await generateAccessToken({
+  cognitoDomain: 'my-app',
+  region: 'us-east-1',
+  clientId: 'my-client-id',
+  clientSecret: 'my-client-secret',
+  scopes: ['read:orders', 'write:orders'],
+});
+```
+
+#### `generateUserAccessToken(params)`
+
+Generates an access token using Cognito's InitiateAuth API with the USER_PASSWORD_AUTH flow. `region` and `clientId` are optional and fall back to `AWS_REGION` and `USER_POOL_CLIENT_ID` environment variables.
+
+```typescript
+// Minimal — uses AWS_REGION and USER_POOL_CLIENT_ID environment variables
+const token = await generateUserAccessToken({
+  email: process.env.TEST_EMAIL,
+  password: process.env.TEST_PASSWORD,
+});
+
+// Explicit overrides
+const token = await generateUserAccessToken({
+  region: 'us-east-1',
+  clientId: 'my-client-id',
+  email: process.env.TEST_EMAIL,
+  password: process.env.TEST_PASSWORD,
+});
+```
+
 ### HTTP Utilities
 
 #### `httpCall<T>(endpoint, resource, method, payload?, headers?)`
@@ -158,19 +205,6 @@ const response = await httpCall<CreateOrderResponse>(
   'POST',
   { productId: 'PROD-123' },
   { Authorization: 'Bearer token' }
-);
-```
-
-#### `generateAccessToken(url, clientId, clientSecret, scopes?)`
-
-Generates an OAuth 2.0 access token using the client credentials flow.
-
-```typescript
-const token = await generateAccessToken(
-  'https://auth.example.com',
-  'my-client-id',
-  'my-client-secret',
-  ['read:orders', 'write:orders']
 );
 ```
 
@@ -200,6 +234,7 @@ const shortId = generateRandomId(8);   // Truncated: "a1b2c3d4"
 ```text
 .
 ├── src/
+│   ├── cognito/            # Cognito auth utilities (generateAccessToken, generateUserAccessToken)
 │   ├── dynamo-db/          # DynamoDB utilities (getItem, putItem, query)
 │   ├── utils/              # General utilities (delay, httpCall, etc.)
 │   └── index.ts            # Main exports
