@@ -1,0 +1,9 @@
+{
+  "workspaces": {
+    ".": {},
+    "docs-site": {}
+  },
+  "ignoreDependencies": [
+    "conventional-changelog-conventionalcommits" // Required by @semantic-release/commit-analyzer via the "conventionalcommits" preset in .releaserc.json
+  ]
+}
